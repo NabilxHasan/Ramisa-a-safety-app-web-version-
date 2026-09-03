@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink-primary: #E91E63;
+  --color-pink-dark: #C2185B;
+  --color-pink-light: #F8BBD0;
+  --color-pink-container: #FCE4EC;
+  --color-red-alert: #D32F2F;
+  --color-red-dark: #B71C1C;
+  --color-green-safe: #2E7D32;
+  --color-amber-warning: #F57F17;
+  --color-surface-bg: #FFF8FA;
+  --color-surface-card: #FFFFFF;
+  --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-surface-bg);
+  color: var(--color-text-primary);
+}

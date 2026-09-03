@@ -1,0 +1,6 @@
+{
+  "name": "Ramisa",
+  "description": "Women & Child Safety App",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
