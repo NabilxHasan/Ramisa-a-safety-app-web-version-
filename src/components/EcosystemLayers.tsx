@@ -14,7 +14,7 @@ const layers = [
 
 export function EcosystemLayers() {
   return (
-    <section className="py-24 bg-gray-50 border-t border-[#111]/10">
+    <section className="py-24 bg-white border-t border-[#111]/5">
       <div className="max-w-[1240px] mx-auto px-6 md:px-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black text-[#111] mb-6">One ecosystem. <span className="text-pink-primary">Multiple layers of protection.</span></h2>
@@ -24,7 +24,7 @@ export function EcosystemLayers() {
           {layers.map((layer, i) => {
             const Icon = layer.icon;
             return (
-              <div key={i} className="bg-white rounded-3xl p-8 border border-[#111]/10 shadow-sm hover:shadow-md transition-shadow group flex flex-col h-full">
+              <div key={i} className="bg-white rounded-3xl p-8 border border-[#111]/10 shadow-sm hover:shadow-md transition-all group flex flex-col h-full">
                 <div className="w-12 h-12 bg-pink-container rounded-2xl flex items-center justify-center text-pink-dark mb-6 group-hover:scale-110 transition-transform">
                   <Icon size={24} />
                 </div>

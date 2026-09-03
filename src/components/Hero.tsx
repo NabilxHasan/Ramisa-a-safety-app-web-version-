@@ -12,30 +12,28 @@ export default function Hero() {
   ];
 
   return (
-    <section className="pt-32 pb-16 px-6 max-w-[1240px] mx-auto flex flex-col items-center overflow-hidden">
+    <section className="pt-36 pb-20 px-6 max-w-[1240px] mx-auto flex flex-col items-center overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="w-full flex flex-col items-center text-center mb-16"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] border-[#111]/15 bg-[#111]/5 text-[#111] mb-8">
-          <span className="size-1.5 rounded-full bg-[#111]"></span> A New Era of Safety
-        </span>
+
         
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-[#111] leading-[1.05] tracking-tight mb-8 max-w-4xl text-balance">
-          Safety should never be <span className="text-pink-primary">out of reach.</span>
+          Safety should never be <span className="text-pink-primary italic font-serif">out of reach.</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-[#111]/70 mb-10 leading-relaxed max-w-2xl text-balance">
+        <p className="text-lg md:text-xl text-[#111]/70 mb-10 leading-relaxed max-w-2xl text-balance font-sans">
           RAMISA is a personal safety ecosystem designed to help women and children stay connected to trusted people when it matters most.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center w-full max-w-md">
-          <button className="w-full sm:w-auto bg-pink-primary text-white px-8 py-4 rounded-full text-[15px] font-bold hover:bg-pink-dark transition-colors flex items-center justify-center gap-2 shadow-soft">
+          <button className="w-full sm:w-auto bg-pink-primary text-white px-8 py-4 rounded-full text-[15px] font-bold hover:bg-pink-dark transition-all flex items-center justify-center gap-2 shadow-sm">
             Get Ramisa
           </button>
-          <button className="w-full sm:w-auto bg-white text-[#111] border border-[#111]/20 px-8 py-4 rounded-full text-[15px] font-bold hover:bg-gray-50 transition-colors">
+          <button className="w-full sm:w-auto bg-white text-[#111] border border-[#111]/15 px-8 py-4 rounded-full text-[15px] font-bold hover:bg-gray-50 transition-colors shadow-sm">
             How Ramisa Works
           </button>
         </div>
@@ -58,7 +56,7 @@ export default function Hero() {
             }} 
           />
           <div className="hidden absolute inset-0 bg-gradient-to-br from-pink-primary to-pink-dark flex-col items-center justify-center text-white p-6 text-center">
-              <ShieldAlert size={64} className="mb-6" />
+              <ShieldAlert size={64} className="mb-6 text-white" />
               <p className="font-black text-3xl mb-2">SOS</p>
               <p className="text-sm font-bold opacity-90">SMS & CALL GUARDIANS</p>
           </div>
@@ -82,3 +80,4 @@ export default function Hero() {
     </section>
   );
 }
+

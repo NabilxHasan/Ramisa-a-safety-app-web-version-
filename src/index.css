@@ -1,6 +1,9 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
 @theme {
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --color-pink-primary: #E91E63;
   --color-pink-dark: #C2185B;
   --color-pink-light: #F8BBD0;
@@ -9,10 +12,10 @@
   --color-red-dark: #B71C1C;
   --color-green-safe: #2E7D32;
   --color-amber-warning: #F57F17;
-  --color-surface-bg: #FFF8FA;
-  --color-surface-card: #FFFFFF;
-  --color-text-primary: #212121;
-  --color-text-secondary: #757575;
+  --color-surface-bg: #FFFFFF;
+  --color-surface-card: #FFF8FA;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
 }
 
 html {
@@ -20,6 +23,18 @@ html {
 }
 
 body {
+  font-family: var(--font-sans);
   background-color: var(--color-surface-bg);
   color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3, h4, h5, h6, .font-serif-heading {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+
+
+
