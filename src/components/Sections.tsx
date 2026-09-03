@@ -7,19 +7,19 @@ export function ProblemSection() {
       <div className="mx-auto w-full max-w-[1240px] px-6 md:px-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-black text-[#111] mb-6 tracking-tight">
-            Every Day Without Protection, <br/><span className="text-red-alert">Someone Gets Hurt.</span>
+            Safety doesn't always come with <br/><span className="text-red-alert">an internet connection.</span>
           </h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6 mb-16">
           <div className="flex flex-col rounded-3xl bg-white p-8 md:p-10 border border-[#111]/10 shadow-sm h-full">
-            <h3 className="text-2xl font-black text-[#111] mb-6">If you're walking home alone</h3>
+            <h3 className="text-2xl font-black text-[#111] mb-6">When every second counts</h3>
             <ul className="space-y-4">
               {[
-                "No one knows exactly where you are.",
-                "Calling for help takes too long in a panic.",
-                "Your phone becomes useless the moment you're scared.",
-                "If something happens, there's no record, no witness, no help."
+                "Internet is unavailable or unstable",
+                "You cannot comfortably make a phone call",
+                "You cannot type a long message",
+                "You are travelling somewhere unfamiliar",
               ].map((text, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <XCircle className="text-red-alert shrink-0 mt-0.5" size={20} />
@@ -30,13 +30,12 @@ export function ProblemSection() {
           </div>
           
           <div className="flex flex-col rounded-3xl bg-pink-container p-8 md:p-10 shadow-sm h-full">
-            <h3 className="text-2xl font-black text-pink-dark mb-6">If you're a parent</h3>
+            <h3 className="text-2xl font-black text-pink-dark mb-6">When families are disconnected</h3>
             <ul className="space-y-4">
               {[
-                "You can't watch your child every single second.",
-                "You don't know if they're safe on the way to school.",
-                "There's no way to reach them fast in an emergency.",
-                "You have no visibility once they leave your sight."
+                "Family members don't know where you are",
+                "Children need a simple way to request help",
+                "Battery and connectivity become limitations"
               ].map((text, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <XCircle className="text-red-alert shrink-0 mt-0.5" size={20} />
@@ -50,7 +49,7 @@ export function ProblemSection() {
         <div className="mt-10 rounded-2xl bg-[#FFF8FA] p-6 md:p-8 border border-pink-container">
           <Quote className="size-7 text-pink-primary mb-3" />
           <blockquote className="font-display text-2xl font-semibold leading-snug text-[#111] md:text-3xl text-balance">
-            "This isn't a small inconvenience. This is a gap that costs lives — and it's time to close it."
+            "RAMISA is designed to help users quickly alert trusted contacts when they feel unsafe."
           </blockquote>
         </div>
       </div>
@@ -60,25 +59,27 @@ export function ProblemSection() {
 
 export function HowItWorks() {
   const steps = [
-    { title: "Set Up Your Shield", desc: "Create your profile and add trusted guardians in minutes." },
-    { title: "Activate Live Protection", desc: "Shield goes active; your location and status are always ready to share." },
-    { title: "One-Tap or Shake for SOS", desc: "Shake your device 3x or tap SOS to instantly alert guardians with your fused GPS location via SMS & call." },
-    { title: "Access Every Safety Tool Instantly", desc: "Fake call, siren, lock screen, safe zones, offline mesh SOS — all from one hub." },
-    { title: "Stay Connected to Your Community", desc: "Verified guardians, nearby responders, and safety alerts keep you protected even offline." }
+    { title: "Set up your trusted contacts.", desc: "Choose the friends, family, or guardians you trust to receive emergency alerts." },
+    { title: "Start a Safe Journey or keep RAMISA ready.", desc: "Tell RAMISA where you are going, or just let the app run quietly in the background." },
+    { title: "Activate SOS or respond to a Safety Check.", desc: "If something feels wrong, press SOS. Or let RAMISA check in on you if your journey looks unusual." },
+    { title: "RAMISA notifies trusted contacts.", desc: "RAMISA uses cloud (if internet is available), SMS fallback, or local retries to send your alerts." },
   ];
 
   return (
     <section id="how-it-works" className="py-20 bg-surface-bg px-6 border-y border-[#111]/5">
       <div className="max-w-[1240px] mx-auto">
         <h2 className="text-4xl md:text-6xl font-black text-center text-[#111] mb-16 tracking-tight">How It Works</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, i) => (
-            <div key={i} className="flex flex-col bg-white p-8 rounded-3xl border border-[#111]/10 shadow-sm">
-              <div className="w-12 h-12 rounded-full bg-pink-primary text-white flex items-center justify-center font-black text-lg shadow-sm mb-6">
+            <div key={i} className="flex flex-col bg-white p-8 rounded-3xl border border-[#111]/10 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+              <div className="absolute -right-4 -top-4 text-[100px] font-black text-[#111]/5 leading-none transition-transform group-hover:scale-110">
                 {i + 1}
               </div>
-              <h3 className="text-xl font-bold text-[#111] mb-3">{step.title}</h3>
-              <p className="text-[#111]/70 text-sm leading-relaxed font-medium">{step.desc}</p>
+              <div className="w-12 h-12 rounded-full bg-[#111] text-white flex items-center justify-center font-black text-lg shadow-sm mb-6 relative z-10">
+                {i + 1}
+              </div>
+              <h3 className="text-xl font-bold text-[#111] mb-3 relative z-10">{step.title}</h3>
+              <p className="text-[#111]/70 text-sm leading-relaxed font-medium relative z-10">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -223,12 +224,14 @@ export function FinalCTA() {
   );
 }
 
+import { Link } from 'react-router-dom';
+
 export function Footer() {
   return (
     <footer className="bg-gray-50 py-16 px-6 border-t border-[#111]/10">
       <div className="max-w-[1240px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
         <div className="md:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
+          <Link to="/" className="flex items-center gap-2 mb-4">
             <div className="w-8 h-8 rounded-full bg-pink-primary flex items-center justify-center text-white overflow-hidden shrink-0">
                <img src="/PHOTO-2026-08-27-00-49-03.jpg" alt="Ramisa Logo" className="w-full h-full object-cover" onError={(e) => {
                  e.currentTarget.style.display = 'none';
@@ -237,35 +240,36 @@ export function Footer() {
                <Shield className="hidden w-4 h-4" />
             </div>
             <span className="text-xl font-black text-[#111]">Ramisa</span>
-          </div>
-          <p className="text-[#111]/60 text-sm font-medium">Your Safety, Our Priority.</p>
+          </Link>
+          <p className="text-[#111]/60 text-sm font-medium">Safety should never be out of reach.</p>
         </div>
         
         <div>
           <h4 className="font-bold text-[#111] mb-6">Product</h4>
           <ul className="space-y-4 text-sm text-[#111]/60 font-medium">
-            <li><a href="#how-it-works" className="hover:text-pink-primary transition-colors">How It Works</a></li>
-            <li><a href="#features" className="hover:text-pink-primary transition-colors">Features</a></li>
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Download App</a></li>
+            <li><Link to="/features" className="hover:text-pink-primary transition-colors">Features</Link></li>
+            <li><Link to="/app" className="hover:text-pink-primary transition-colors">App</Link></li>
+            <li><Link to="/hardware" className="hover:text-pink-primary transition-colors">Hardware</Link></li>
+            <li><Link to="/guide" className="hover:text-pink-primary transition-colors">Safety Guide</Link></li>
           </ul>
         </div>
         
         <div>
           <h4 className="font-bold text-[#111] mb-6">Company</h4>
           <ul className="space-y-4 text-sm text-[#111]/60 font-medium">
-            <li><a href="#" className="hover:text-pink-primary transition-colors">About Us</a></li>
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Mission</a></li>
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Contact</a></li>
+            <li><Link to="/about" className="hover:text-pink-primary transition-colors">About Us</Link></li>
+            <li><Link to="/blog" className="hover:text-pink-primary transition-colors">Blog</Link></li>
+            <li><Link to="/support" className="hover:text-pink-primary transition-colors">Support</Link></li>
           </ul>
         </div>
         
         <div>
           <h4 className="font-bold text-[#111] mb-6">Legal</h4>
           <ul className="space-y-4 text-sm text-[#111]/60 font-medium">
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Terms of Service</a></li>
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Data Policy</a></li>
-            <li><a href="#" className="hover:text-pink-primary transition-colors">Security</a></li>
+            <li><Link to="/privacy" className="hover:text-pink-primary transition-colors">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="hover:text-pink-primary transition-colors">Terms of Service</Link></li>
+            <li><Link to="/cookie" className="hover:text-pink-primary transition-colors">Cookie Policy</Link></li>
+            <li><Link to="/security" className="hover:text-pink-primary transition-colors">Security</Link></li>
           </ul>
         </div>
       </div>
@@ -274,7 +278,7 @@ export function Footer() {
         <p className="text-sm text-[#111]/60 font-medium">© 2026 Ramisa. All rights reserved.</p>
         <div className="flex gap-4">
           <div className="w-8 h-8 rounded-full bg-gray-200 hover:bg-pink-container text-gray-500 hover:text-pink-primary transition-colors cursor-pointer flex items-center justify-center text-xs font-bold">FB</div>
-          <div className="w-8 h-8 rounded-full bg-gray-200 hover:bg-pink-container text-gray-500 hover:text-pink-primary transition-colors cursor-pointer flex items-center justify-center text-xs font-bold">X</div>
+          <div className="w-8 h-8 rounded-full bg-gray-200 hover:bg-pink-container text-gray-500 hover:text-pink-primary transition-colors cursor-pointer flex items-center justify-center text-xs font-bold">IN</div>
           <div className="w-8 h-8 rounded-full bg-gray-200 hover:bg-pink-container text-gray-500 hover:text-pink-primary transition-colors cursor-pointer flex items-center justify-center text-xs font-bold">IG</div>
         </div>
       </div>

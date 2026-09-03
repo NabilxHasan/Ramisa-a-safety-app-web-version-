@@ -24,19 +24,19 @@ export default function Hero() {
         </span>
         
         <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-[#111] leading-[1.05] tracking-tight mb-8 max-w-4xl text-balance">
-          A Digital Shield for Every <span className="text-pink-primary">Woman and Child.</span>
+          Safety should never be <span className="text-pink-primary">out of reach.</span>
         </h1>
         
         <p className="text-lg md:text-xl text-[#111]/70 mb-10 leading-relaxed max-w-2xl text-balance">
-          Ramisa brings instant SOS alerts, live location sharing, trusted guardians, and community protection together in one app. One tap. Real safety.
+          RAMISA is a personal safety ecosystem designed to help women and children stay connected to trusted people when it matters most.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center w-full max-w-md">
           <button className="w-full sm:w-auto bg-pink-primary text-white px-8 py-4 rounded-full text-[15px] font-bold hover:bg-pink-dark transition-colors flex items-center justify-center gap-2 shadow-soft">
-            Get Ramisa Free
+            Get Ramisa
           </button>
           <button className="w-full sm:w-auto bg-white text-[#111] border border-[#111]/20 px-8 py-4 rounded-full text-[15px] font-bold hover:bg-gray-50 transition-colors">
-            See How It Works
+            How Ramisa Works
           </button>
         </div>
       </motion.div>
